@@ -1,0 +1,1 @@
+{"pipeconf":{"id":"org.onosproject.pipelines.qos","name":"QoS Pipeline","description":"P4 pipeline with QoS support","p4info":"/Users/luisdaniel/ng-sdn/public/assignments/qos_implementation/p4build/qos.p4info.txt","bmv2json":"/Users/luisdaniel/ng-sdn/public/assignments/qos_implementation/p4build/qos.json","type":"bmv2"}}

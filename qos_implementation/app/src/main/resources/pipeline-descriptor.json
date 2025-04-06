@@ -1,0 +1,16 @@
+{
+  "name": "qos",
+  "device": {
+    "deviceType": "PIPELINE_CONFIGURABLE",
+    "pipeconf": "org.onosproject.pipelines.qos"
+  },
+  "extensions": {
+    "p4runtime": {
+      "bmv2": {
+        "pipeconfName": "org.onosproject.pipelines.qos",
+        "p4info": "qos.p4info.txt",
+        "bmv2json": "qos.json"
+      }
+    }
+  }
+}

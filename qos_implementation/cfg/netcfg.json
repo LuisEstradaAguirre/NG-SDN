@@ -1,0 +1,36 @@
+{
+  "devices": {
+    "device:s1": {
+      "basic": {
+        "managementAddress": "grpc://localhost:50001?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.onosproject.pipelines.basic"
+      }
+    }
+  },
+  "ports": {
+    "device:s1/1": {
+      "interfaces": [
+        {
+          "name": "s1-eth1",
+          "ips": ["10.0.0.254/24"]
+        }
+      ]
+    },
+    "device:s1/2": {
+      "interfaces": [
+        {
+          "name": "s1-eth2",
+          "ips": ["10.0.0.254/24"]
+        }
+      ]
+    }
+  },
+  "apps": {
+    "org.onosproject.core": {
+      "core": {
+        "linkDiscoveryMode": "STRICT"
+      }
+    }
+  }
+}

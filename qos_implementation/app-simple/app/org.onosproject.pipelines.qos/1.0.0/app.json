@@ -1,0 +1,1 @@
+{"priority":-10,"apps":{"org.onosproject.pipelines.qos":{"pipeconf":{"p4info":"p4c-out/qos.p4info.txt","bmv2json":"p4c-out/qos.json","type":"bmv2"}}}}
