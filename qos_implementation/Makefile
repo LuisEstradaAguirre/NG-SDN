@@ -44,6 +44,10 @@ controller:
 mininet:
 	$(MN_STRATUM)
 
+# Start Mininet with Stratum and double topology
+mininet-double:
+	$(MN_STRATUM) python3 /workdir/scripts/dual_topology.py
+
 # Start ONOS CLI
 cli:
 	$(ONOS_CLI)
