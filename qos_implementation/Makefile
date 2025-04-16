@@ -46,7 +46,13 @@ mininet:
 
 # Start Mininet with Stratum and double topology
 mininet-double:
-	$(MN_STRATUM) python3 /workdir/scripts/dual_topology.py
+	docker run --privileged --rm -it \
+	  --name mn-stratum \
+	  --network sdn-net \
+	  -v /tmp/mn-stratum:/tmp \
+	  -v $(PWD):/workdir -w /workdir \
+	  --entrypoint python \
+	  opennetworking/mn-stratum:20.12 /workdir/dual_topology.py
 
 # Start ONOS CLI
 cli:

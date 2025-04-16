@@ -24,7 +24,13 @@ class DualQoSTopo(Topo):
         self.addLink(h2c, s2)
 
 def run():
-    net = Mininet(topo=DualQoSTopo(), controller=RemoteController, link=TCLink)
+    from stratum import StratumBmv2Switch  # Import inside the function to avoid errors if not present
+    net = Mininet(
+        topo=DualQoSTopo(),
+        controller=lambda name: RemoteController(name, ip='onos', port=6653),
+        switch=StratumBmv2Switch,
+        link=TCLink
+    )
     net.start()
     print("Networks are up. You can now run your traffic generation scripts.")
     net.interact()
@@ -32,3 +38,6 @@ def run():
 if __name__ == '__main__':
     setLogLevel('info')
     run()
+
+# Register the topology for Mininet's --custom/--topo dual
+topos = {'dual': DualQoSTopo}
